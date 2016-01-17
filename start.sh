@@ -3,8 +3,8 @@
 chown -R git /home/git/repositories
 chmod -R u+rwX /home/git/repositories
 
-chown -R git /home/git/.ssh
-chmod -R 0700 /home/git/.ssh
+chown -R git:git /home/git/.ssh
+chmod -R u+rwX /home/git/.ssh
 
 if [ ! -f /home/git/repositories/.gitolite-configured ]; then
   echo Initial configuration of gitolite
