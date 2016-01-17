@@ -1,5 +1,8 @@
 #! /bin/sh -
 
+chown -R git /home/git/repositories
+chmod -R u+rwX /home/git/repositories
+
 # handle the gitolite.rc
 if [  -f "/home/git/repositories/gitolite.rc" ]; then
   echo 'import rc file'
