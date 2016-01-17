@@ -37,6 +37,9 @@ RUN sed -i 's/session\s\+required\s\+pam_loginuid.so/# \0/' /etc/pam.d/sshd
 
 RUN mkdir /var/run/sshd
 
+ADD gitolite.rc /home/git/.gitolite.rc
+RUN chown git:git /home/git/.gitolite.rc
+
 ADD start.sh /start.sh
 RUN chmod a+x /start.sh
 
