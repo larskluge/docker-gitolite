@@ -10,6 +10,9 @@
 FROM ubuntu-debootstrap:15.10
 MAINTAINER Beta CZ <hlj8080@gmail.com>
 
+ENV DEBIAN_FRONTEND noninteractive
+RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
+
 # install requirements
 RUN apt-get update
 RUN apt-get install -y git perl openssh-server
