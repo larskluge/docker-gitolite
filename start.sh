@@ -3,8 +3,8 @@
 chown -R git /home/git/repositories
 chmod -R u+rwX /home/git/repositories
 
-chown -R git /home/git/.ssh/authorized_keys
-chmod -R 0600 /home/git/.ssh/authorized_keys
+chown -R git /home/git/.ssh
+chmod -R 0700 /home/git/.ssh
 
 if [ ! -f /home/git/repositories/.gitolite-configured ]; then
   echo $SSH_KEY > /tmp/admin.pub
