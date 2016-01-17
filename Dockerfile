@@ -8,7 +8,7 @@
 #    docker run -d --name gitolite -p 22022:22 -v /var/data/git:/home/git/repositories -e SSH_KEY="$(cat ~/.ssh/id_rsa.pub)"  gitolite
 
 FROM ubuntu-debootstrap:15.10
-MAINTAINER Beta CZ <hlj8080@gmail.com>
+MAINTAINER Lars Kluge <l@larskluge.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
