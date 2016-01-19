@@ -1,7 +1,7 @@
 #! /bin/bash -x
 
 reset_admin_repo=false
-git config --global push.default simple
+su git -c "git config --global push.default simple"
 
 cd /home/git
 
@@ -13,7 +13,7 @@ chmod -R u+rwX .ssh
 
 cd /home/git
 if [ -d "repositories/gitolite-admin.git" ]; then
-  git clone repositories/gitolite-admin.git /tmp/gitolite-admin
+  su git -c "git clone repositories/gitolite-admin.git /tmp/gitolite-admin"
   cd /tmp/gitolite-admin
   commit_cnt=$(git rev-list HEAD --count)
   if [ "$commit_cnt" -gt "1" ]; then
@@ -27,7 +27,7 @@ su git -c "bin/gitolite setup -pk=/tmp/admin.pub"
 
 if [ "$reset_admin_repo" = true ]; then
   cd /tmp/gitolite-admin
-  /home/git/bin/gitolite push -f
+  su git -c "bin/gitolite push -f"
 fi
 
 rm -rf /tmp/gitolite-admin
