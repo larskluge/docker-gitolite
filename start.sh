@@ -27,7 +27,7 @@ su git -c "bin/gitolite setup -pk=/tmp/admin.pub"
 
 if [ "$reset_admin_repo" = true ]; then
   cd /tmp/gitolite-admin
-  git push --force
+  /home/git/bin/gitolite push -f
 fi
 
 rm -rf /tmp/gitolite-admin
